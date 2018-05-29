@@ -11,7 +11,7 @@ describe('index', () => {
   const src = path.resolve(__dirname, '..', 'index.js')
 
   it('calls console.error()', done => {
-    const spy = expect.spyOn(console, 'error').andCallThrough()
+    const spy = expect.spyOn(console, 'error').andCallThrough("something broke")
 
     jsdom.env(html, [src], {
       virtualConsole: jsdom.createVirtualConsole().sendTo(console)
@@ -23,7 +23,7 @@ describe('index', () => {
   })
 
   it('calls console.log()', done => {
-    const spy = expect.spyOn(console, 'log').andCallThrough()
+    const spy = expect.spyOn(console, 'log').andCallThrough("something needs yours attention")
 
     jsdom.env(html, [src], {
       virtualConsole: jsdom.createVirtualConsole().sendTo(console)
@@ -35,7 +35,7 @@ describe('index', () => {
   })
 
   it('calls console.warn()', done => {
-    const spy = expect.spyOn(console, 'warn').andCallThrough()
+    const spy = expect.spyOn(console, 'warn').andCallThrough("maybe you should take a look before you continue")
 
     jsdom.env(html, [src], {
       virtualConsole: jsdom.createVirtualConsole().sendTo(console)
