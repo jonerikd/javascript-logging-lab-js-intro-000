@@ -3,9 +3,7 @@ const fs = require('fs')
 const jsdom = require('jsdom')
 const path = require('path')
 
-console.error("something broke")
-console.log("something needs yours attention")
-console.warn("maybe you should take a look before you continue")
+
 describe('index', () => {
   const html = '<div></div>'
   const src = path.resolve(__dirname, '..', 'index.js')
