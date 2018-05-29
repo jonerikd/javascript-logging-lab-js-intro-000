@@ -23,7 +23,7 @@ console.warn("maybe you should take a look before you continue")
   })
 
   it('calls console.log()', done => {
-    const spy = expect.spyOn(console, 'log').andCallThrough("something needs yours attention")
+    const spy = expect.spyOn(console, 'log').andCallThrough(console.log("something needs yours attention"))
 
     jsdom.env(html, [src], {
       virtualConsole: jsdom.createVirtualConsole().sendTo(console)
