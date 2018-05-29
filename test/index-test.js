@@ -11,7 +11,7 @@ console.error("something broke")
 console.log("something needs yours attention")
 console.warn("maybe you should take a look before you continue")
   it('calls console.error()', done => {
-    const spy = expect.spyOn(console, 'error').andCallThrough("something broke")
+    const spy = expect.spyOn(console, 'error').andCallThrough(console.error("something broke"))
 
     jsdom.env(html, [src], {
       virtualConsole: jsdom.createVirtualConsole().sendTo(console)
@@ -35,7 +35,7 @@ console.warn("maybe you should take a look before you continue")
   })
 
   it('calls console.warn()', done => {
-    const spy = expect.spyOn(console, 'warn').andCallThrough("maybe you should take a look before you continue")
+    const spy = expect.spyOn(console, 'warn').andCallThrough(console.warn("maybe you should take a look before you continue"))
 
     jsdom.env(html, [src], {
       virtualConsole: jsdom.createVirtualConsole().sendTo(console)
