@@ -7,7 +7,9 @@ const path = require('path')
 describe('index', () => {
   const html = '<div></div>'
   const src = path.resolve(__dirname, '..', 'index.js')
-
+console.error("something broke")
+console.log("something needs yours attention")
+console.warn("maybe you should take a look before you continue")
   it('calls console.error()', done => {
     const spy = expect.spyOn(console, 'error').andCallThrough("something broke")
 
